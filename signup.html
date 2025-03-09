@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up</title>
+    <style>
+        body{
+            background-image: url(Netflix.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+        .container{
+            margin-top: 60px;
+            margin-left: 550px;
+            background-color: rgba(12, 12, 12, 0.903);
+            margin-right: 550px;
+            text-align: center;
+            border-radius: 10px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif
+        }
+        h1{
+            padding-top: 40px;
+            text-align: start;
+            padding-left: 140px;
+        }
+        #email,#password{
+            padding: 10px 60px;
+            margin-bottom: 20px;
+        }
+        #sign{
+            padding: 10px 120px;
+            background-color: red;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        } 
+        #sign-code{
+            padding: 10px 85px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .new,.capcha{
+            display: flex;
+            justify-content: flex-start;
+            padding-left: 70px;
+        }
+        .capcha{
+            padding-right: 40px;
+            text-align: start;
+            font-size: 13px;
+        }
+        .box1{
+            margin-top: 20px;
+        }
+        .learn{
+            display: flex;
+            justify-content: flex-start;
+            padding-left: 70px;
+            padding-bottom: 20px;
+            color: white;
+        }
+        #log-in{
+            padding: 10px 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <form class="container" action="" method="post">
+        <h1>Sign Up</h1>
+        <input type="email" name="email" id="email" placeholder="emial or mobile number" required><br>
+        <input type="password" name="password" id="password" placeholder="password" required><br>
+        <button id="sign">Sign In</button>
+        <p>Or</p>
+        <button id="sign-code">Use a sign-in code</button><br>
+        <a href="#">Forgot password</a><br>
+        <div class="box">
+            <input type="checkbox" id="box1" name="box1" class="box1">
+            <label type="box1" id="box1">Remember me</label>
+        </div>
+        <p class="new">New to Netflix? <b>Sign up now</b></p>
+        <p class="capcha">This page is protected by Google reCAPTCHA to ensure  you're not a bot.</p>
+        <div class="learn">
+            <a href="#">Learn more</a>
+        </div>
+        <button id="log-in">Login</button>
+    </form>
+
+    <script>
+        document.getElementById('log-in').addEventListener("click", function(){
+            window.location.href = "loginpage.html";
+        })
+    </script>
+</body>
+</html>
