@@ -33,6 +33,21 @@ document.querySelectorAll('.answer').forEach(ans => {
   ans.style.padding = '0 15px';
 });
 
+  // Hamburger menu toggle
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+
+hamburger.addEventListener('click', () => {
+  mobileNav.classList.toggle('active');
+});
+
+// Close mobile nav when a link is clicked
+mobileNav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileNav.classList.remove('active');
+  });
+});
+
 // Reset all plus icons
 document.querySelectorAll('#plus-icon').forEach(icon => {
   icon.style.transform = 'rotate(0deg)';
