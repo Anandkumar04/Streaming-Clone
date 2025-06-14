@@ -23,7 +23,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: stretch;
   overflow: hidden;
 }
 .container::before {
@@ -33,12 +33,16 @@ body {
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1;
 }
+/* HEADER */
 .header {
-    display: flex;
+  width: 100%;
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   position: relative;
-  padding: 18px 0;
+  padding: 18px 20px;
+  z-index: 2;
+  background: transparent;
 }
 .logo {
   background-image: linear-gradient(to top, rgb(177,16,16) 0%, rgb(243,72,72) 100%);
@@ -49,9 +53,19 @@ body {
   background-clip: text;
   z-index: 2;
   position: relative;
-  text-align: center;
-  margin: 0 auto;
+  text-align: left;
+  margin: 0;
 }
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 11;
+}
+/* Desktop Nav (hidden on mobile) */
 .items ul {
   display: flex;
   gap: 2rem;
@@ -68,22 +82,6 @@ body {
 .items ul li a:hover {
   color: #e21010;
 }
-
-/* Hamburger Icon */
-.hamburger {
-display: none;
-  font-size: 2rem;
-  color: #fff;
-  background: none;
-  border: none;
-  cursor: pointer;
-  position: absolute;
-  right: 18px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 11;
-}
-
 /* Mobile Nav Overlay */
 .mobile-nav {
   display: none;
@@ -91,12 +89,14 @@ display: none;
 
 /* --- MAIN HERO --- */
 .main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   flex: 1;
   z-index: 2;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 0;
 }
 .content {
   color: white;
@@ -104,6 +104,8 @@ display: none;
   padding: 32px 12px;
   border-radius: 10px;
   max-width: 90vw;
+  position: relative;
+  z-index: 2;
 }
 .content h1 {
   font-size: 3.2rem;
@@ -354,14 +356,10 @@ display: none;
 
 @media (max-width: 800px) {
   .header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
     padding: 20px 4vw;
   }
   .logo {
     font-size: 2rem;
-    padding: 6px 0;
   }
   .items ul {
     gap: 1.2rem;
@@ -380,18 +378,11 @@ display: none;
 }
 
 @media (max-width: 600px) {
-  .container, .main {
-    min-height: 100vh;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-  }
   .header {
-    justify-content: center;
-    padding: 14px 0;
+    padding: 14px 12px;
   }
   .logo {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
   .items ul {
     display: none;
@@ -434,88 +425,22 @@ display: none;
     width: 100vw;
   }
   .main {
-    min-height: 160px;
+    min-height: 100vh;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
   }
   .content {
     padding: 0 7vw;
   }
   .content h1 {
-    font-size: 1.4rem;
+    font-size: 2rem;
   }
-  .content button, .btn button {
+  .content button {
     font-size: 1rem;
     padding: 11px 5px;
     width: 90vw;
     max-width: 230px;
   }
-  .Trending-Now {
-    font-size: 1.1rem;
-    padding: 24px 3vw 12px 3vw;
-  }
-  .Trending-img {
-    padding: 0 2vw 16px 2vw;
-    gap: 8px;
-  }
-  .Trending-img img {
-    width: 46vw;
-    min-width: 96px;
-    max-width: 140px;
-    margin: 0 2px 10px 2px;
-  }
-  .why-choose {
-    padding: 24px 2vw 0 2vw;
-  }
-  .cards {
-    flex-direction: column;
-    gap: 10px;
-    align-items: stretch;
-  }
-  .cards > div {
-    min-width: unset;
-    max-width: unset;
-    width: 100%;
-    padding: 18px 10px 24px 10px;
-    margin: 0 0 14px 0;
-  }
-  .questions {
-    width: 98vw;
-    padding: 0 1vw;
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .questions h3 {
-    font-size: 1.1rem;
-    padding: 18px 0 4px;
-  }
-  .q-btn {
-    font-size: 1rem;
-    padding: 15px 10px;
-  }
-  .btn {
-    margin: 26px auto 0 auto;
-  }
-  .footer {
-    font-size: 0.95rem;
-    padding-top: 10px;
-  }
-  .footer p {
-    padding: 8px 3vw;
-  }
-  .other-queries {
-    padding: 10px 3vw;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .footer-links {
-    min-width: unset;
-    gap: 3px;
-  }
-  .end {
-    padding: 6px 3vw 1.3rem 3vw;
-    gap: 6px;
-  }
-  #lang {
-    padding: 6px 14px;
-    font-size: 0.98rem;
-  }
+  /* ...keep your styles for Trending, FAQ, Footer, etc. ... */
 }
