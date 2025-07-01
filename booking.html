@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment - BookEase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">BookEase</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="index.html#how-it-works">How it Works</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="loginpage.html" class="btn btn-ghost">Sign In</a>
+                <a href="dashboard.html" class="btn btn-primary">Dashboard</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+        <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="index.html#how-it-works">How it Works</a></li>
+            <li><a href="index.html#testimonials">Testimonials</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="loginpage.html">Sign In</a></li>
+            <li><a href="dashboard.html" class="btn btn-primary btn-sm">Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <!-- Booking Steps Progress -->
+    <section class="py-6 bg-gray-50">
+        <div class="container">
+            <div class="booking-steps">
+                <div class="booking-step active">
+                    <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                    <span>Service Details</span>
+                </div>
+                <div class="booking-step">
+                    <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                    <span>Date & Time</span>
+                </div>
+                <div class="booking-step">
+                    <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                    <span>Your Information</span>
+                </div>
+                <div class="booking-step">
+                    <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
+                    <span>Confirmation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="py-12">
+        <div class="container">
+            <form id="bookingForm" class="max-w-4xl mx-auto">
+                <!-- Step 1: Service Details -->
+                <div class="booking-step-content active" data-step="1">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Service Details</h2>
+                            <p class="text-muted">Review your selected service</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="selected-service p-6 bg-gray-50 rounded-lg mb-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-16 h-16 bg-primary rounded-lg flex items-center justify-center">
+                                        <span class="text-white text-2xl" id="serviceIcon">🏥</span>
+                                    </div>
+                                    <div class="flex-1">
+                                        <h3 class="text-xl font-semibold mb-2" id="serviceName">General Consultation</h3>
+                                        <p class="text-muted mb-3" id="serviceDescription">Comprehensive health checkup with certified doctors</p>
+                                        <div class="flex items-center gap-6">
+                                            <div class="flex items-center gap-2">
+                                                <span class="text-sm text-muted">Duration:</span>
+                                                <span class="font-medium" id="serviceDuration">45 minutes</span>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <span class="text-sm text-muted">Price:</span>
+                                                <span class="font-medium text-primary text-lg" id="servicePrice">$75</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Select Provider (Optional)</label>
+                                <select class="form-select" id="providerSelect">
+                                    <option value="">Any available provider</option>
+                                    <option value="dr-smith">Dr. Sarah Smith - Available Mon-Fri</option>
+                                    <option value="dr-johnson">Dr. Mike Johnson - Available Tue-Sat</option>
+                                    <option value="dr-brown">Dr. Emily Brown - Available Mon-Wed</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Special Requests (Optional)</label>
+                                <textarea class="form-textarea" id="specialRequests" placeholder="Any special requirements or notes for your appointment..."></textarea>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-primary" onclick="nextStep()">Continue to Date & Time</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Date & Time Selection -->
+                <div class="booking-step-content" data-step="2">
+                    <div class="grid grid-cols-2 gap-8">
+                        <!-- Calendar -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Select Date</h3>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="calendar" id="bookingCalendar">
+                                    <div class="calendar-header">
+                                        <button type="button" class="calendar-nav-btn" id="prevMonth" aria-label="Previous month">‹</button>
+                                        <h3 class="calendar-title" id="calendarTitle">January 2024</h3>
+                                        <button type="button" class="calendar-nav-btn" id="nextMonth" aria-label="Next month">›</button>
+                                    </div>
+                                    <div class="calendar-grid">
+                                        <div class="calendar-day-header">Sun</div>
+                                        <div class="calendar-day-header">Mon</div>
+                                        <div class="calendar-day-header">Tue</div>
+                                        <div class="calendar-day-header">Wed</div>
+                                        <div class="calendar-day-header">Thu</div>
+                                        <div class="calendar-day-header">Fri</div>
+                                        <div class="calendar-day-header">Sat</div>
+                                        <!-- Calendar days will be populated by JavaScript -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Time Slots -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Select Time</h3>
+                                <p class="text-sm text-muted" id="selectedDateDisplay">Please select a date first</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="time-slots" id="timeSlots">
+                                    <div class="text-center text-muted py-8">
+                                        <p>Select a date to view available time slots</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between mt-8">
+                        <button type="button" class="btn btn-outline" onclick="prevStep()">Back</button>
+                        <button type="button" class="btn btn-primary" id="continueToInfo" onclick="nextStep()" disabled>Continue to Information</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Customer Information -->
+                <div class="booking-step-content" data-step="3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Your Information</h2>
+                            <p class="text-muted">Please provide your contact details</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <div class="form-group">
+                                        <label class="form-label">First Name *</label>
+                                        <input type="text" class="form-input" id="firstName" required>
+                                    </div>
+                                </div>
+                                <div class="form-col">
+                                    <div class="form-group">
+                                        <label class="form-label">Last Name *</label>
+                                        <input type="text" class="form-input" id="lastName" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <div class="form-group">
+                                        <label class="form-label">Email Address *</label>
+                                        <input type="email" class="form-input" id="email" required>
+                                    </div>
+                                </div>
+                                <div class="form-col">
+                                    <div class="form-group">
+                                        <label class="form-label">Phone Number *</label>
+                                        <input type="tel" class="form-input" id="phone" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Address</label>
+                                <input type="text" class="form-input" id="address" placeholder="Street address">
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-col">
+                                    <div class="form-group">
+                                        <label class="form-label">City</label>
+                                        <input type="text" class="form-input" id="city">
+                                    </div>
+                                </div>
+                                <div class="form-col">
+                                    <div class="form-group">
+                                        <label class="form-label">ZIP Code</label>
+                                        <input type="text" class="form-input" id="zipCode">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="form-checkbox">
+                                    <input type="checkbox" id="terms" required>
+                                    <label for="terms">I agree to the <a href="#" class="text-primary">Terms of Service</a> and <a href="#" class="text-primary">Privacy Policy</a> *</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="form-checkbox">
+                                    <input type="checkbox" id="newsletter">
+                                    <label for="newsletter">I'd like to receive appointment reminders and promotional emails</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="flex justify-between">
+                                <button type="button" class="btn btn-outline" onclick="prevStep()">Back</button>
+                                <button type="button" class="btn btn-primary" onclick="nextStep()">Review & Confirm</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Confirmation -->
+                <div class="booking-step-content" data-step="4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Confirm Your Appointment</h2>
+                            <p class="text-muted">Please review all details before confirming</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="booking-summary">
+                                <div class="grid grid-cols-2 gap-8">
+                                    <div>
+                                        <h4 class="font-semibold mb-4">Service Details</h4>
+                                        <div class="space-y-2 text-sm">
+                                            <div class="flex justify-between">
+                                                <span class="text-muted">Service:</span>
+                                                <span id="summaryService">General Consultation</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-muted">Provider:</span>
+                                                <span id="summaryProvider">Any available</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-muted">Duration:</span>
+                                                <span id="summaryDuration">45 minutes</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-muted">Date:</span>
+                                                <span id="summaryDate">-</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-muted">Time:</span>
+                                                <span id="summaryTime">-</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <h4 class="font-semibold mb-4">Contact Information</h4>
+                                        <div class="space-y-2 text-sm">
+                                            <div class="flex justify-between">
+                                                <span class="text-muted">Name:</span>
+                                                <span id="summaryName">-</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-muted">Email:</span>
+                                                <span id="summaryEmail">-</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span class="text-muted">Phone:</span>
+                                                <span id="summaryPhone">-</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="border-t pt-4 mt-6">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-lg font-semibold">Total Amount:</span>
+                                        <span class="text-2xl font-bold text-primary" id="summaryTotal">$75</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="flex justify-between">
+                                <button type="button" class="btn btn-outline" onclick="prevStep()">Back</button>
+                                <button type="submit" class="btn btn-primary btn-lg">Confirm Appointment</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container text-center">
+            <p>&copy; 2024 BookEase. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/booking.js"></script>
+    <script src="js/calendar.js"></script>
+</body>
+</html>
