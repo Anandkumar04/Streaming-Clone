@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - BookEase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">BookEase</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="dashboard.html" class="text-primary">Dashboard</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="flex items-center gap-4">
+                    <div class="relative">
+                        <button class="btn btn-ghost" id="notificationBtn">
+                            🔔
+                            <span class="badge badge-accent absolute -top-2 -right-2">3</span>
+                        </button>
+                    </div>
+                    <div class="relative">
+                        <button class="btn btn-ghost" id="profileBtn">
+                            👤 John Doe
+                        </button>
+                        <div class="absolute right-0 top-full mt-2 w-48 bg-white shadow-lg rounded-lg border hidden" id="profileMenu">
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50">Profile Settings</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50">Billing</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-50">Help</a>
+                            <hr class="my-1">
+                            <a href="index.html" class="block px-4 py-2 hover:bg-gray-50 text-red-600">Sign Out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+        <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="dashboard.html" class="text-primary">Dashboard</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><hr class="my-2"></li>
+            <li><a href="#">Profile Settings</a></li>
+            <li><a href="index.html">Sign Out</a></li>
+        </ul>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <section class="py-8">
+        <div class="container">
+            <!-- User Type Switcher -->
+            <div class="flex justify-between items-center mb-8">
+                <div>
+                    <h1 class="text-3xl font-bold mb-2">Dashboard</h1>
+                    <p class="text-muted">Welcome back, John! Here's what's happening with your appointments.</p>
+                </div>
+                <div class="flex gap-2">
+                    <button class="btn btn-outline btn-sm" id="customerView">Customer View</button>
+                    <button class="btn btn-primary btn-sm" id="providerView">Provider View</button>
+                </div>
+            </div>
+
+            <!-- Customer Dashboard -->
+            <div class="dashboard-view" id="customerDashboard">
+                <!-- Stats Row -->
+                <div class="stats-grid mb-8">
+                    <div class="stats-widget">
+                        <div class="stats-number">5</div>
+                        <div class="stats-label">Upcoming Appointments</div>
+                    </div>
+                    <div class="stats-widget">
+                        <div class="stats-number">12</div>
+                        <div class="stats-label">Total Bookings</div>
+                    </div>
+                    <div class="stats-widget">
+                        <div class="stats-number">$420</div>
+                        <div class="stats-label">Total Spent</div>
+                    </div>
+                    <div class="stats-widget">
+                        <div class="stats-number">4.8</div>
+                        <div class="stats-label">Average Rating</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-layout">
+                    <!-- Main Content -->
+                    <div class="dashboard-main">
+                        <!-- Upcoming Appointments -->
+                        <div class="card mb-8">
+                            <div class="card-header">
+                                <div class="flex justify-between items-center">
+                                    <h2>Upcoming Appointments</h2>
+                                    <a href="services.html" class="btn btn-primary btn-sm">Book New</a>
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="appointment-list">
+                                    <div class="appointment-item border-b p-6 hover:bg-gray-50">
+                                        <div class="flex items-start justify-between">
+                                            <div class="flex items-start gap-4">
+                                                <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
+                                                    <span class="text-white text-xl">🏥</span>
+                                                </div>
+                                                <div>
+                                                    <h3 class="font-semibold mb-1">General Consultation</h3>
+                                                    <p class="text-sm text-muted mb-2">with Dr. Sarah Smith</p>
+                                                    <div class="flex items-center gap-4 text-sm">
+                                                        <span class="flex items-center gap-1">📅 Dec 15, 2024</span>
+                                                        <span class="flex items-center gap-1">🕐 2:00 PM</span>
+                                                        <span class="flex items-center gap-1">⏱️ 45 min</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex gap-2">
+                                                <button class="btn btn-outline btn-sm">Reschedule</button>
+                                                <button class="btn btn-ghost btn-sm text-red-600">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="appointment-item border-b p-6 hover:bg-gray-50">
+                                        <div class="flex items-start justify-between">
+                                            <div class="flex items-start gap-4">
+                                                <div class="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center">
+                                                    <span class="text-white text-xl">💆‍♀️</span>
+                                                </div>
+                                                <div>
+                                                    <h3 class="font-semibold mb-1">Spa Treatment</h3>
+                                                    <p class="text-sm text-muted mb-2">with Beauty Spa Center</p>
+                                                    <div class="flex items-center gap-4 text-sm">
+                                                        <span class="flex items-center gap-1">📅 Dec 18, 2024</span>
+                                                        <span class="flex items-center gap-1">🕐 11:00 AM</span>
+                                                        <span class="flex items-center gap-1">⏱️ 90 min</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex gap-2">
+                                                <button class="btn btn-outline btn-sm">Reschedule</button>
+                                                <button class="btn btn-ghost btn-sm text-red-600">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="appointment-item p-6 hover:bg-gray-50">
+                                        <div class="flex items-start justify-between">
+                                            <div class="flex items-start gap-4">
+                                                <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center">
+                                                    <span class="text-white text-xl">🏋️‍♂️</span>
+                                                </div>
+                                                <div>
+                                                    <h3 class="font-semibold mb-1">Personal Training</h3>
+                                                    <p class="text-sm text-muted mb-2">with Mike Rodriguez</p>
+                                                    <div class="flex items-center gap-4 text-sm">
+                                                        <span class="flex items-center gap-1">📅 Dec 20, 2024</span>
+                                                        <span class="flex items-center gap-1">🕐 6:00 PM</span>
+                                                        <span class="flex items-center gap-1">⏱️ 60 min</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="flex gap-2">
+                                                <button class="btn btn-outline btn-sm">Reschedule</button>
+                                                <button class="btn btn-ghost btn-sm text-red-600">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Activity -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Recent Activity</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="space-y-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                            <span class="text-green-600 text-sm">✓</span>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-sm">Appointment completed: Dental Checkup</p>
+                                            <p class="text-xs text-muted">2 days ago</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                            <span class="text-blue-600 text-sm">📅</span>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-sm">Appointment booked: Spa Treatment</p>
+                                            <p class="text-xs text-muted">1 week ago</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
+                                            <span class="text-yellow-600 text-sm">⭐</span>
+                                        </div>
+                                        <div class="flex-1">
+                                            <p class="text-sm">Review submitted for Personal Training</p>
+                                            <p class="text-xs text-muted">1 week ago</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <div class="dashboard-sidebar">
+                        <!-- Quick Actions -->
+                        <div class="card mb-6">
+                            <div class="card-header">
+                                <h3>Quick Actions</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="space-y-3">
+                                    <a href="services.html" class="btn btn-primary w-full">Book Appointment</a>
+                                    <button class="btn btn-outline w-full">View All Bookings</button>
+                                    <button class="btn btn-outline w-full">Update Profile</button>
+                                    <button class="btn btn-outline w-full">Payment Methods</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Notifications -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Notifications</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="space-y-3">
+                                    <div class="p-3 bg-blue-50 rounded-lg">
+                                        <p class="text-sm font-medium">Appointment Reminder</p>
+                                        <p class="text-xs text-muted">Your appointment with Dr. Smith is tomorrow at 2:00 PM</p>
+                                    </div>
+                                    <div class="p-3 bg-green-50 rounded-lg">
+                                        <p class="text-sm font-medium">Booking Confirmed</p>
+                                        <p class="text-xs text-muted">Your spa treatment is confirmed for Dec 18</p>
+                                    </div>
+                                    <div class="p-3 bg-orange-50 rounded-lg">
+                                        <p class="text-sm font-medium">Review Request</p>
+                                        <p class="text-xs text-muted">Please review your recent dental checkup</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Provider Dashboard -->
+            <div class="dashboard-view hidden" id="providerDashboard">
+                <!-- Stats Row -->
+                <div class="stats-grid mb-8">
+                    <div class="stats-widget">
+                        <div class="stats-number">28</div>
+                        <div class="stats-label">Today's Appointments</div>
+                    </div>
+                    <div class="stats-widget">
+                        <div class="stats-number">156</div>
+                        <div class="stats-label">This Month</div>
+                    </div>
+                    <div class="stats-widget">
+                        <div class="stats-number">$2,340</div>
+                        <div class="stats-label">Monthly Revenue</div>
+                    </div>
+                    <div class="stats-widget">
+                        <div class="stats-number">4.9</div>
+                        <div class="stats-label">Average Rating</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-layout">
+                    <!-- Main Content -->
+                    <div class="dashboard-main">
+                        <!-- Today's Schedule -->
+                        <div class="card mb-8">
+                            <div class="card-header">
+                                <div class="flex justify-between items-center">
+                                    <h2>Today's Schedule</h2>
+                                    <div class="flex gap-2">
+                                        <button class="btn btn-outline btn-sm">Set Availability</button>
+                                        <button class="btn btn-primary btn-sm">Add Slot</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="schedule-list">
+                                    <div class="schedule-item border-b p-6 hover:bg-gray-50">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center gap-4">
+                                                <div class="text-center">
+                                                    <div class="text-lg font-bold">9:00</div>
+                                                    <div class="text-xs text-muted">AM</div>
+                                                </div>
+                                                <div>
+                                                    <h3 class="font-semibold">General Consultation</h3>
+                                                    <p class="text-sm text-muted">John Smith - (555) 123-4567</p>
+                                                    <span class="badge badge-primary">Confirmed</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex gap-2">
+                                                <button class="btn btn-outline btn-sm">Contact</button>
+                                                <button class="btn btn-ghost btn-sm">More</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="schedule-item border-b p-6 hover:bg-gray-50">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center gap-4">
+                                                <div class="text-center">
+                                                    <div class="text-lg font-bold">10:30</div>
+                                                    <div class="text-xs text-muted">AM</div>
+                                                </div>
+                                                <div>
+                                                    <h3 class="font-semibold">Follow-up Consultation</h3>
+                                                    <p class="text-sm text-muted">Sarah Johnson - (555) 987-6543</p>
+                                                    <span class="badge badge-secondary">In Progress</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex gap-2">
+                                                <button class="btn btn-outline btn-sm">Contact</button>
+                                                <button class="btn btn-ghost btn-sm">More</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="schedule-item p-6 hover:bg-gray-50">
+                                        <div class="flex items-center justify-between">
+                                            <div class="flex items-center gap-4">
+                                                <div class="text-center">
+                                                    <div class="text-lg font-bold">2:00</div>
+                                                    <div class="text-xs text-muted">PM</div>
+                                                </div>
+                                                <div>
+                                                    <h3 class="font-semibold">Health Checkup</h3>
+                                                    <p class="text-sm text-muted">Emily Davis - (555) 456-7890</p>
+                                                    <span class="badge badge-accent">Pending</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex gap-2">
+                                                <button class="btn btn-outline btn-sm">Contact</button>
+                                                <button class="btn btn-ghost btn-sm">More</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Revenue Chart -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Revenue Overview</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="h-64 bg-gray-50 rounded-lg flex items-center justify-center">
+                                    <div class="text-center">
+                                        <div class="text-4xl mb-2">📊</div>
+                                        <p class="text-muted">Revenue chart would go here</p>
+                                        <p class="text-sm text-muted">Integration with charting library needed</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Provider Sidebar -->
+                    <div class="dashboard-sidebar">
+                        <!-- Quick Actions -->
+                        <div class="card mb-6">
+                            <div class="card-header">
+                                <h3>Quick Actions</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="space-y-3">
+                                    <button class="btn btn-primary w-full">Set Availability</button>
+                                    <button class="btn btn-outline w-full">View Calendar</button>
+                                    <button class="btn btn-outline w-full">Manage Services</button>
+                                    <button class="btn btn-outline w-full">View Reports</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Reviews -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Recent Reviews</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="space-y-4">
+                                    <div class="border-b pb-3">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="text-yellow-500">★★★★★</span>
+                                            <span class="text-sm font-medium">John S.</span>
+                                        </div>
+                                        <p class="text-sm text-muted">"Excellent service and very professional. Highly recommend!"</p>
+                                    </div>
+                                    <div class="border-b pb-3">
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="text-yellow-500">★★★★★</span>
+                                            <span class="text-sm font-medium">Maria L.</span>
+                                        </div>
+                                        <p class="text-sm text-muted">"Great experience, will definitely book again."</p>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center gap-2 mb-2">
+                                            <span class="text-yellow-500">★★★★☆</span>
+                                            <span class="text-sm font-medium">David R.</span>
+                                        </div>
+                                        <p class="text-sm text-muted">"Good service, appointment was on time."</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container text-center">
+            <p>&copy; 2024 BookEase. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

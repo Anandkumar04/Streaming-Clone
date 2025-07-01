@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmed - BookEase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">BookEase</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="loginpage.html" class="btn btn-ghost">Sign In</a>
+                <a href="dashboard.html" class="btn btn-primary">Dashboard</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+        <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="loginpage.html">Sign In</a></li>
+        </ul>
+    </nav>
+
+    <!-- Confirmation Content -->
+    <section class="py-12 min-h-screen">
+        <div class="container max-w-4xl">
+            <!-- Success Message -->
+            <div class="text-center mb-12">
+                <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="text-4xl text-green-600">✓</span>
+                </div>
+                <h1 class="text-4xl font-bold text-primary mb-4">Booking Confirmed!</h1>
+                <p class="text-xl text-muted">Your appointment has been successfully booked. We've sent a confirmation email with all the details.</p>
+            </div>
+
+            <!-- Booking Details -->
+            <div class="card mb-8">
+                <div class="card-header">
+                    <div class="flex items-center justify-between">
+                        <h2>Appointment Details</h2>
+                        <div class="badge badge-secondary">Confirmed</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="grid grid-cols-2 gap-8 mb-8">
+                        <!-- Service Information -->
+                        <div>
+                            <h3 class="font-semibold mb-4 text-primary">Service Information</h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-muted">Booking ID:</span>
+                                    <span class="font-mono text-sm" id="bookingId">BK123456</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-muted">Service:</span>
+                                    <span id="confirmService">General Consultation</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-muted">Provider:</span>
+                                    <span id="confirmProvider">Dr. Sarah Smith</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-muted">Duration:</span>
+                                    <span id="confirmDuration">45 minutes</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-muted">Price:</span>
+                                    <span class="font-semibold text-primary" id="confirmPrice">$75</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Appointment Details -->
+                        <div>
+                            <h3 class="font-semibold mb-4 text-primary">Appointment Details</h3>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-muted">Date:</span>
+                                    <span id="confirmDate">December 15, 2024</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-muted">Time:</span>
+                                    <span id="confirmTime">2:00 PM</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-muted">Status:</span>
+                                    <span class="text-green-600 font-medium">Confirmed</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-muted">Location:</span>
+                                    <span>Downtown Medical Center</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-muted">Address:</span>
+                                    <span class="text-sm">123 Main St, City, ST 12345</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Customer Information -->
+                    <div class="border-t pt-6">
+                        <h3 class="font-semibold mb-4 text-primary">Your Information</h3>
+                        <div class="grid grid-cols-2 gap-8">
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-muted">Name:</span>
+                                    <span id="confirmCustomerName">John Doe</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-muted">Email:</span>
+                                    <span id="confirmEmail">john.doe@example.com</span>
+                                </div>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-muted">Phone:</span>
+                                    <span id="confirmPhone">(555) 123-4567</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-muted">Confirmation sent to:</span>
+                                    <span class="text-green-600" id="confirmNotification">Email & SMS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="grid grid-cols-2 gap-6 mb-8">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div class="text-3xl mb-3">📅</div>
+                        <h3 class="font-semibold mb-2">Add to Calendar</h3>
+                        <p class="text-sm text-muted mb-4">Don't forget your appointment</p>
+                        <div class="space-y-2">
+                            <button class="btn btn-outline w-full" onclick="addToGoogleCalendar()">Google Calendar</button>
+                            <button class="btn btn-outline w-full" onclick="addToOutlookCalendar()">Outlook Calendar</button>
+                            <button class="btn btn-outline w-full" onclick="downloadICS()">Download .ics file</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body text-center">
+                        <div class="text-3xl mb-3">📧</div>
+                        <h3 class="font-semibold mb-2">Share Appointment</h3>
+                        <p class="text-sm text-muted mb-4">Share with family or friends</p>
+                        <div class="space-y-2">
+                            <button class="btn btn-outline w-full" onclick="shareViaEmail()">Share via Email</button>
+                            <button class="btn btn-outline w-full" onclick="shareViaSMS()">Share via SMS</button>
+                            <button class="btn btn-outline w-full" onclick="copyAppointmentLink()">Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Important Information -->
+            <div class="card mb-8">
+                <div class="card-header">
+                    <h3>Important Information</h3>
+                </div>
+                <div class="card-body">
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-semibold mb-3 text-secondary">Before Your Appointment</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-secondary">•</span>
+                                    <span>Arrive 15 minutes early for check-in</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-secondary">•</span>
+                                    <span>Bring a valid ID and insurance card</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-secondary">•</span>
+                                    <span>Complete any required forms online</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-secondary">•</span>
+                                    <span>Prepare a list of current medications</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-3 text-accent">Cancellation Policy</h4>
+                            <ul class="space-y-2 text-sm">
+                                <li class="flex items-start gap-2">
+                                    <span class="text-accent">•</span>
+                                    <span>Free cancellation up to 24 hours before</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-accent">•</span>
+                                    <span>50% charge for cancellations within 24 hours</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-accent">•</span>
+                                    <span>Full charge for no-shows</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <span class="text-accent">•</span>
+                                    <span>Reschedule anytime through your dashboard</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="card mb-8">
+                <div class="card-header">
+                    <h3>What's Next?</h3>
+                </div>
+                <div class="card-body">
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-bold text-sm">1</div>
+                            <div>
+                                <h4 class="font-semibold">Confirmation Email Sent</h4>
+                                <p class="text-sm text-muted">Check your email for detailed confirmation and any preparation instructions.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-sm">2</div>
+                            <div>
+                                <h4 class="font-semibold">Reminder Notifications</h4>
+                                <p class="text-sm text-muted">We'll send you reminders 24 hours and 2 hours before your appointment.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-8 h-8 bg-accent rounded-full flex items-center justify-center text-white font-bold text-sm">3</div>
+                            <div>
+                                <h4 class="font-semibold">Manage Your Booking</h4>
+                                <p class="text-sm text-muted">View, reschedule, or cancel your appointment anytime through your dashboard.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="dashboard.html" class="btn btn-primary btn-lg">View Dashboard</a>
+                <a href="services.html" class="btn btn-outline btn-lg">Book Another Service</a>
+                <button class="btn btn-ghost btn-lg" onclick="printConfirmation()">Print Confirmation</button>
+            </div>
+
+            <!-- Support Information -->
+            <div class="text-center mt-12">
+                <p class="text-muted mb-4">Need help or have questions about your appointment?</p>
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <a href="tel:1-800-BOOKEASE" class="btn btn-outline">Call Support</a>
+                    <a href="mailto:support@bookease.com" class="btn btn-outline">Email Support</a>
+                    <button class="btn btn-outline" onclick="openLiveChat()">Live Chat</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container text-center">
+            <p>&copy; 2024 BookEase. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/confirmation.js"></script>
+</body>
+</html>
