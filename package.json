@@ -1,0 +1,21 @@
+{
+  "name": "appointment-booking-mern",
+  "version": "1.0.0",
+  "description": "MERN Stack Appointment Booking Platform",
+  "main": "server/server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "install-server": "cd server && npm install",
+    "install-client": "cd client && npm install",
+    "install-all": "npm run install-server && npm run install-client"
+  },
+  "keywords": ["mern", "appointment", "booking", "react", "nodejs", "mongodb"],
+  "author": "Anandkumar04",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
