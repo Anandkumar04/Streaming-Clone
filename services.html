@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - BookEase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">BookEase</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#how-it-works">How it Works</a></li>
+                    <li><a href="index.html#testimonials">Testimonials</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="loginpage.html" class="btn btn-ghost">Sign In</a>
+                <a href="dashboard.html" class="btn btn-primary">Dashboard</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+        <ul>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#how-it-works">How it Works</a></li>
+            <li><a href="index.html#testimonials">Testimonials</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="loginpage.html">Sign In</a></li>
+            <li><a href="dashboard.html" class="btn btn-primary btn-sm">Dashboard</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="py-16 bg-primary text-white text-center">
+        <div class="container">
+            <h1 class="mb-4">Find Your Perfect Service</h1>
+            <p class="text-xl opacity-90">Browse through our wide range of professional services</p>
+        </div>
+    </section>
+
+    <!-- Search and Filters -->
+    <section class="py-8 bg-gray-50">
+        <div class="container">
+            <div class="search-filters">
+                <div class="search-input">
+                    <input type="text" id="searchInput" class="form-input" placeholder="Search services..." aria-label="Search services">
+                </div>
+                <div class="filter-select">
+                    <select id="categoryFilter" class="form-select" aria-label="Filter by category">
+                        <option value="">All Categories</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="beauty">Beauty & Wellness</option>
+                        <option value="fitness">Fitness</option>
+                        <option value="consulting">Consulting</option>
+                        <option value="education">Education</option>
+                        <option value="automotive">Automotive</option>
+                    </select>
+                </div>
+                <div class="filter-select">
+                    <select id="priceFilter" class="form-select" aria-label="Filter by price range">
+                        <option value="">All Prices</option>
+                        <option value="0-50">$0 - $50</option>
+                        <option value="50-100">$50 - $100</option>
+                        <option value="100-200">$100 - $200</option>
+                        <option value="200+">$200+</option>
+                    </select>
+                </div>
+                <div class="filter-select">
+                    <select id="ratingFilter" class="form-select" aria-label="Filter by rating">
+                        <option value="">All Ratings</option>
+                        <option value="4.5+">4.5+ Stars</option>
+                        <option value="4+">4+ Stars</option>
+                        <option value="3+">3+ Stars</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-12">
+        <div class="container">
+            <div class="services-grid" id="servicesGrid">
+                <!-- Healthcare Services -->
+                <div class="service-card" data-category="healthcare" data-price="75" data-rating="4.8">
+                    <div class="service-card-image bg-primary flex items-center justify-center">
+                        <span class="text-white text-4xl">🏥</span>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">General Consultation</h3>
+                        <p class="service-card-description">Comprehensive health checkup with certified doctors</p>
+                        <div class="service-card-meta">
+                            <span class="service-card-price">$75</span>
+                            <span class="service-card-duration">45 min</span>
+                        </div>
+                        <div class="service-card-rating">
+                            <span>★★★★★</span>
+                            <span>(4.8)</span>
+                        </div>
+                        <button class="btn btn-primary w-full mt-4" onclick="window.location.href='booking.html?service=general-consultation'">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="service-card" data-category="healthcare" data-price="120" data-rating="4.9">
+                    <div class="service-card-image bg-primary flex items-center justify-center">
+                        <span class="text-white text-4xl">🦷</span>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Dental Checkup</h3>
+                        <p class="service-card-description">Complete dental examination and cleaning</p>
+                        <div class="service-card-meta">
+                            <span class="service-card-price">$120</span>
+                            <span class="service-card-duration">60 min</span>
+                        </div>
+                        <div class="service-card-rating">
+                            <span>★★★★★</span>
+                            <span>(4.9)</span>
+                        </div>
+                        <button class="btn btn-primary w-full mt-4" onclick="window.location.href='booking.html?service=dental-checkup'">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Beauty & Wellness -->
+                <div class="service-card" data-category="beauty" data-price="85" data-rating="4.7">
+                    <div class="service-card-image bg-secondary flex items-center justify-center">
+                        <span class="text-white text-4xl">💆‍♀️</span>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Spa Treatment</h3>
+                        <p class="service-card-description">Relaxing full-body spa and massage therapy</p>
+                        <div class="service-card-meta">
+                            <span class="service-card-price">$85</span>
+                            <span class="service-card-duration">90 min</span>
+                        </div>
+                        <div class="service-card-rating">
+                            <span>★★★★★</span>
+                            <span>(4.7)</span>
+                        </div>
+                        <button class="btn btn-primary w-full mt-4" onclick="window.location.href='booking.html?service=spa-treatment'">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="service-card" data-category="beauty" data-price="65" data-rating="4.6">
+                    <div class="service-card-image bg-secondary flex items-center justify-center">
+                        <span class="text-white text-4xl">💄</span>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Beauty Consultation</h3>
+                        <p class="service-card-description">Professional makeup and skincare consultation</p>
+                        <div class="service-card-meta">
+                            <span class="service-card-price">$65</span>
+                            <span class="service-card-duration">60 min</span>
+                        </div>
+                        <div class="service-card-rating">
+                            <span>★★★★★</span>
+                            <span>(4.6)</span>
+                        </div>
+                        <button class="btn btn-primary w-full mt-4" onclick="window.location.href='booking.html?service=beauty-consultation'">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Fitness -->
+                <div class="service-card" data-category="fitness" data-price="60" data-rating="4.8">
+                    <div class="service-card-image bg-accent flex items-center justify-center">
+                        <span class="text-white text-4xl">🏋️‍♂️</span>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Personal Training</h3>
+                        <p class="service-card-description">One-on-one fitness training session</p>
+                        <div class="service-card-meta">
+                            <span class="service-card-price">$60</span>
+                            <span class="service-card-duration">60 min</span>
+                        </div>
+                        <div class="service-card-rating">
+                            <span>★★★★★</span>
+                            <span>(4.8)</span>
+                        </div>
+                        <button class="btn btn-primary w-full mt-4" onclick="window.location.href='booking.html?service=personal-training'">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="service-card" data-category="fitness" data-price="40" data-rating="4.5">
+                    <div class="service-card-image bg-accent flex items-center justify-center">
+                        <span class="text-white text-4xl">🧘‍♀️</span>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Yoga Session</h3>
+                        <p class="service-card-description">Guided yoga and meditation session</p>
+                        <div class="service-card-meta">
+                            <span class="service-card-price">$40</span>
+                            <span class="service-card-duration">75 min</span>
+                        </div>
+                        <div class="service-card-rating">
+                            <span>★★★★★</span>
+                            <span>(4.5)</span>
+                        </div>
+                        <button class="btn btn-primary w-full mt-4" onclick="window.location.href='booking.html?service=yoga-session'">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Consulting -->
+                <div class="service-card" data-category="consulting" data-price="150" data-rating="4.9">
+                    <div class="service-card-image bg-primary flex items-center justify-center">
+                        <span class="text-white text-4xl">💼</span>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Business Consultation</h3>
+                        <p class="service-card-description">Strategic business planning and advice</p>
+                        <div class="service-card-meta">
+                            <span class="service-card-price">$150</span>
+                            <span class="service-card-duration">90 min</span>
+                        </div>
+                        <div class="service-card-rating">
+                            <span>★★★★★</span>
+                            <span>(4.9)</span>
+                        </div>
+                        <button class="btn btn-primary w-full mt-4" onclick="window.location.href='booking.html?service=business-consultation'">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="service-card" data-category="consulting" data-price="100" data-rating="4.7">
+                    <div class="service-card-image bg-primary flex items-center justify-center">
+                        <span class="text-white text-4xl">⚖️</span>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Legal Consultation</h3>
+                        <p class="service-card-description">Professional legal advice and guidance</p>
+                        <div class="service-card-meta">
+                            <span class="service-card-price">$100</span>
+                            <span class="service-card-duration">60 min</span>
+                        </div>
+                        <div class="service-card-rating">
+                            <span>★★★★★</span>
+                            <span>(4.7)</span>
+                        </div>
+                        <button class="btn btn-primary w-full mt-4" onclick="window.location.href='booking.html?service=legal-consultation'">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="service-card" data-category="education" data-price="45" data-rating="4.6">
+                    <div class="service-card-image bg-secondary flex items-center justify-center">
+                        <span class="text-white text-4xl">📚</span>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Tutoring Session</h3>
+                        <p class="service-card-description">One-on-one academic tutoring</p>
+                        <div class="service-card-meta">
+                            <span class="service-card-price">$45</span>
+                            <span class="service-card-duration">60 min</span>
+                        </div>
+                        <div class="service-card-rating">
+                            <span>★★★★★</span>
+                            <span>(4.6)</span>
+                        </div>
+                        <button class="btn btn-primary w-full mt-4" onclick="window.location.href='booking.html?service=tutoring-session'">Book Now</button>
+                    </div>
+                </div>
+
+                <!-- Automotive -->
+                <div class="service-card" data-category="automotive" data-price="80" data-rating="4.4">
+                    <div class="service-card-image bg-accent flex items-center justify-center">
+                        <span class="text-white text-4xl">🚗</span>
+                    </div>
+                    <div class="service-card-content">
+                        <h3 class="service-card-title">Car Maintenance</h3>
+                        <p class="service-card-description">Complete vehicle inspection and maintenance</p>
+                        <div class="service-card-meta">
+                            <span class="service-card-price">$80</span>
+                            <span class="service-card-duration">120 min</span>
+                        </div>
+                        <div class="service-card-rating">
+                            <span>★★★★☆</span>
+                            <span>(4.4)</span>
+                        </div>
+                        <button class="btn btn-primary w-full mt-4" onclick="window.location.href='booking.html?service=car-maintenance'">Book Now</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- No Results Message -->
+            <div id="noResults" class="text-center py-12 hidden">
+                <div class="text-6xl mb-4">🔍</div>
+                <h3 class="text-xl font-semibold mb-2">No services found</h3>
+                <p class="text-muted">Try adjusting your search or filters</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container">
+            <div class="grid grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">BookEase</h3>
+                    <p class="text-sm text-gray-300 mb-4">Making appointment booking simple and efficient for everyone.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-300 hover:text-white">Healthcare</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Beauty & Wellness</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Fitness</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Consulting</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-300 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="text-gray-300 hover:text-white">Help Center</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-300">
+                <p>&copy; 2024 BookEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/services.js"></script>
+</body>
+</html>
